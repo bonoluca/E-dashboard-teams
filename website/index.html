@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project E-dashboard</title>
+
+  <!-- (optioneel) performance: preconnect naar Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Font: Orbitron (gewichten 400 en 700) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Jouw stylesheet -->
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="header-inner">
+      <h1 class="glitch" data-text="Project E-dashboard">Project E-dashboard</h1>
+      <div class="actions">
+          <button id="infoBtn">logboek</button>
+          <button id="flyerBtn">Toon Flyer</button>
+      </div>
+  </div>
+</header>
+
+<!-- ===== Main ===== -->
+<main>
+
+  <!-- ===== Overzichtskaarten ===== -->
+  <section id="overview" aria-label="Projectoverzicht">
+    <div class="cards">
+
+      <!-- Card 1 -->
+      <article class="card neon-hover" aria-labelledby="card-doel-title">
+        <div class="card-icon">🎯</div>
+        <h3 id="card-doel-title" class="card-title">Doel van het project</h3>
+        <p class="card-text">
+          De leerlingen van auto kunnen via onze Arduino Nano every live data tonen binnen PowerPoint,
+          dankzij partner Insyncr.
+        </p>
+      </article>
+
+      <!-- Card 2: Hardware -->
+      <article class="card neon-hover" id="hardwareCard">
+        <div class="card-icon">🛠️</div>
+        <h3 class="card-title">Hardware en apps</h3>
+        <p class="card-text">Bekijk welke hardware we precies gebruiken.</p>
+        <p class="card-text">en welke apps we hebben gebruikt.</p>
+        <button id="hardwareBtn" class="team-btn">Hardware laten zien</button>
+      </article>
+
+      <!-- Card 3: Team -->
+      <article class="card neon-hover" id="teamCard">
+        <div class="card-icon">👥</div>
+        <h3 class="card-title">Team</h3>
+        <p class="card-text">
+          Bekijk het volledige projectteam van ICT &amp; Auto.
+        </p>
+        <button id="pplinfo" class="team-btn">Open Team</button>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== Voorbeeld Dashboard ===== -->
+  <section id="example-dashboard" class="pulse-border">
+      <h2>Dit is een voorbeeld van wat we gaan maken</h2>
+
+      <div class="dashboard-grid">
+
+          <div class="dash-card neon-hover">
+              <h3>Snelheid</h3>
+              <p class="value" id="speedVal">32 km/h</p>
+          </div>
+
+          <div class="dash-card neon-hover">
+              <h3>Tijd bezig</h3>
+              <p class="value" id="timeVal">01:24:55</p>
+          </div>
+
+          <div class="dash-card neon-hover">
+              <h3>Spanning</h3>
+              <p class="value" id="voltVal">14.8 V</p>
+          </div>
+
+          <div class="dash-card neon-hover">
+              <h3>Ampère per uur</h3>
+              <p class="value" id="ampVal">2.4 A/h</p>
+          </div>
+
+          <div class="dash-card neon-hover">
+              <h3>Ronde</h3>
+              <p class="value" id="roundVal">8</p>
+          </div>
+
+          <div class="dash-card neon-hover temp-card" id="tempCard">
+              <h3>Temperatuur</h3>
+              <p class="value" id="tempVal">70°C</p>
+          </div>
+
+      </div>
+
+      <!-- Progress Circles -->
+      <div class="circle-grid">
+        <div class="circle-wrapper neon-hover">
+          <div class="progress-circle" style="--percent:75" data-label="75%"></div>
+          <p>Ronde progress</p>
+        </div>
+
+        <div class="circle-wrapper neon-hover">
+          <div class="progress-circle" style="--percent:60" data-label="60%"></div>
+          <p>Temperatuur (%)</p>
+        </div>
+
+        <div class="circle-wrapper neon-hover">
+          <div class="progress-circle" style="--percent:85" data-label="85%"></div>
+          <p>Batterij (%)</p>
+        </div>
+      </div>
+
+  </section>
+
+</main>
+
+<!-- ===== Info Modal ===== -->
+<div id="infoModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="infoTitle">
+  <div class="modal-content">
+
+    <button class="close" id="closeInfo" aria-label="Sluit logboek">&times;</button>
+    <h2 id="infoTitle">Logboek</h2>
+
+    <div class="modal-layout">
+      <nav class="tabs" role="tablist" aria-label="Info tabs">
+        <button class="tab active" data-tab="tab-logboek" role="tab" aria-selected="true" aria-controls="tab-logboek">Logboek</button>
+        <button class="tab" data-tab="tab-greenpower" role="tab" aria-selected="false" aria-controls="tab-greenpower">races green power</button>
+      </nav>
+
+      <div class="tabs-panel">
+        <section class="tab-content" id="tab-logboek" role="tabpanel" aria-labelledby="tab-logboek">
+          <h2>E‑Dashboard Logboek</h2>
+
+          <table class="logboek-table">
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>Activiteit</th>
+                <th>Wie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>16/10/2025</td><td>Overleg met auto</td><td>iedereen</td></tr>
+              <tr><td>17/10/2025</td><td>Pitch</td><td>Luca, Alex, Lars, Tijn</td></tr>
+              <tr><td>03/11/2025</td><td>Start stage</td><td>voor ICT </td></tr>
+              <tr><td>20/11/2025</td><td>begin met Website &amp; logboek &amp; code</td><td>Luca en alex</td></tr>
+              <tr><td></td><td>17/12/2025 - 04/01/2026</td><td>Kerstvakantie</td></tr>
+              <tr><td>08/01/2026</td><td>FlashStorage</td><td>Alex</td></tr>
+              <tr><td>08/01/2026</td><td>Arduino Nano IoT</td><td>Alex</td></tr>
+              <tr><td>08/01/2026</td><td>Website‑code</td><td>Luca</td></tr>
+              <tr><td>08/01/2026</td><td>Solderen</td><td>Eloy</td></tr>
+              <tr><td>05/02/2026</td><td>Website</td><td>Luca</td></tr>
+              <tr><td>05/02/2026</td><td>E‑Chooke code</td><td>Alex</td></tr>
+              <tr><td>05/02/2026</td><td>Code helpen</td><td>Eloy</td></tr>
+              <tr><td>12/02/2026</td><td>werken aan website</td><td>Luca</td></tr>
+              <tr><td>12/02/2026</td><td>begonnen met powerPoint te maken </td><td>Eloy</td></tr>
+              <tr><td>12/02/2026</td><td>werken aan de code </td><td>Alex</td></tr>
+              <tr><td></td><td>16/02/2026 - 22/02/2026</td><td>Krokusvakantie</td></tr>
+              <tr><td>26/02/2026</td><td>werken aan website</td><td>Luca</td></tr>
+              <tr><td>26/02/2026</td><td>werken aan code </td><td>Alex</td></tr>
+              <tr><td>26/02/2026</td><td>werken aan powerpoint en foto's zoeken voor website</td><td>Eloy</td></tr>
+              <tr><td>26/02/2026</td><td>werken aan website, foto's voor website gemaakt </td><td>Luca</td></tr>
+              <tr><td>26/02/2026</td><td>werken aan code</td><td>Alex</td></tr>
+              <tr><td>26/02/2026</td><td>powerpoint dashboard</td><td>Eloy</td></tr>
+              <tr><td>19/03/2026</td><td>powerpoint dashboard</td><td>Luca</td></tr>
+              <tr><td>19/03/2026</td><td>werken aan code</td><td>Alex</td></tr>
+              <tr><td>19/03/2026</td><td>emotionele steun</td><td>Eloy</td></tr>
+              <tr><td>26/03/2026</td><td>emotionele steun</td><td>Eloy</td></tr>
+              <tr><td>26/03/2026</td><td>bluethooth calibreren en arduino code</td><td>Luca</td></tr>
+              <tr><td>26/03/2026</td><td>design</td><td>Alex</td></tr>
+
+
+            </tbody>
+          </table>
+
+        </section>
+
+        <!-- TAB 2 -->
+        <section class="tab-content hidden" id="tab-greenpower" role="tabpanel" aria-labelledby="tab-greenpower">
+          <h2>Races Green Power</h2>
+          <table class="logboek-table">
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>plaats</th>
+                <th>win/loss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td> ..</td><td> ..</td><td> ..</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== Flyer Modal ===== -->
+<div id="flyerModal" class="modal" aria-hidden="true" role="dialog">
+  <div class="modal-content">
+    <button class="close" id="closeFlyer" aria-label="Sluit flyer">&times;</button>
+    <img src="achtergrond_afb.png" alt="Onze projectflyer" class="flyer-img" />
+  </div>
+</div>
+
+<!-- ===== Over Ons Modal ===== -->
+<div id="pplModal" class="modal" aria-hidden="true" role="dialog">
+  <div class="modal-content">
+
+    <button class="close" id="closePpl" aria-label="Sluit team">&times;</button>
+    <h2 style="text-align:center;">Ons Team</h2>
+
+    <div class="team-grid">
+
+      <!-- 1 -->
+      <div class="team-card neon-hover">
+        <h3>ICT</h3>
+        <img src="" alt="Team 1 = ICT">
+        <h3>Alex Brunenberg, Luca Bono, Eloy Dirckx, Johan Colson</h3>
+        <p>...... ......</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="team-card neon-hover">
+        <h3>Auto</h3>
+        <img src="fotoMetTrofee.jpg" alt="Team 2 = auto">
+        <h3>Raf Leyssen, Lars Soons, Tijn Smeets</h3>
+        <p>...... ......</p>
+      </div>
+      <div class="team-card neon-hover">
+        <h3>Partner</h3>
+        <img src="" alt="partner : INSYNCR">
+        <h3>Kurt dupont</h3>
+        <p>...... ......</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Hardware Modal ===== -->
+<div id="HardwareModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="hardwareTitle">
+  <div class="modal-content">
+    <button class="close" id="closeHardware" aria-label="Sluit hardware">&times;</button>
+    <h2 id="hardwareTitle" style="text-align:center;">Onze Hardware</h2>
+
+    <ul class="card-list">
+      <li>Arduino Nano every</li>
+      <li>Sensoren (temp, spanning, stroom)</li>
+      <li>Bekabeling &amp; soldeerwerk</li>
+      <li>Power supply &amp; batterij</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Kolom 1 -->
+    <div class="footer-col">
+      <h3 class="footer-title">Mosa‑RT</h3>
+      <p>ICT & Auto – Greenpower Project</p>
+      <a href="https://campus.mosa-rt.be" class="school-link">campus.mosa-rt.be</a>
+
+      <img src="haai no background.png" class="footer-img small-logo" alt="Mosa RT logo">
+    </div>
+
+    <!-- Kolom 2 -->
+    <div class="footer-col">
+      <h3 class="footer-title">Partner & Sponsor</h3>
+
+      <img src="INSYNCR_parner foto.webp" class="footer-img big-logo" alt="Insyncr logo">
+
+      <p class="footer-credit">Met technologie en innovatie als motor.</p>
+    </div>
+
+    <!-- Kolom 3 -->
+    <div class="footer-col">
+      <h3 class="footer-title">Onderwijs</h3>
+
+      <img src="afb zonder achtergrond mosa logo.png" class="footer-img small-logo" alt="School logo">
+
+      <p class="footer-credit">© 2026 Project E‑Dashboard</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
