@@ -137,12 +137,14 @@
 
     <div class="modal-layout">
       <nav class="tabs" role="tablist" aria-label="Info tabs">
-        <button class="tab active" data-tab="tab-logboek" role="tab" aria-selected="true" aria-controls="tab-logboek">Logboek</button>
-        <button class="tab" data-tab="tab-greenpower" role="tab" aria-selected="false" aria-controls="tab-greenpower">races green power</button>
+        <button class="tab active" data-tab="tab-logboek">Logboek</button>
+        <button class="tab" data-tab="tab-greenpower">Races Green Power</button>
       </nav>
 
       <div class="tabs-panel">
-        <section class="tab-content" id="tab-logboek" role="tabpanel" aria-labelledby="tab-logboek">
+
+        <!-- TAB 1 -->
+        <section class="tab-content" id="tab-logboek">
           <h2>E‑Dashboard Logboek</h2>
 
           <table class="logboek-table">
@@ -153,66 +155,202 @@
                 <th>Wie</th>
               </tr>
             </thead>
-            <tbody>
-              <tr><td>16/10/2025</td><td>Overleg met auto</td><td>iedereen</td></tr>
-              <tr><td>17/10/2025</td><td>Pitch</td><td>Luca, Alex, Lars, Tijn</td></tr>
-              <tr><td>03/11/2025</td><td>Start stage</td><td>voor ICT </td></tr>
-              <tr><td>20/11/2025</td><td>begin met Website &amp; logboek &amp; code</td><td>Luca en alex</td></tr>
-              <tr><td></td><td>17/12/2025 - 04/01/2026</td><td>Kerstvakantie</td></tr>
-              <tr><td>08/01/2026</td><td>FlashStorage</td><td>Alex</td></tr>
-              <tr><td>08/01/2026</td><td>Arduino Nano IoT</td><td>Alex</td></tr>
-              <tr><td>08/01/2026</td><td>Website‑code</td><td>Luca</td></tr>
-              <tr><td>08/01/2026</td><td>Solderen</td><td>Eloy</td></tr>
-              <tr><td>05/02/2026</td><td>Workshop INSYNCR</td><td>met klas, Kurt, leerkrachten </td></tr>
-              <tr><td>05/02/2026</td><td>Website</td><td>Luca</td></tr>
-              <tr><td>05/02/2026</td><td>E‑Chooke code</td><td>Alex</td></tr>
-              <tr><td>05/02/2026</td><td>Code helpen</td><td>Eloy</td></tr>
-              <tr><td>12/02/2026</td><td>werken aan website</td><td>Luca</td></tr>
-              <tr><td>12/02/2026</td><td>begonnen met powerPoint te maken </td><td>Eloy</td></tr>
-              <tr><td>12/02/2026</td><td>werken aan de code </td><td>Alex</td></tr>
-              <tr><td></td><td>16/02/2026 - 22/02/2026</td><td>Krokusvakantie</td></tr>
-              <tr><td>26/02/2026</td><td>werken aan website</td><td>Luca</td></tr>
-              <tr><td>26/02/2026</td><td>werken aan code </td><td>Alex</td></tr>
-              <tr><td>26/02/2026</td><td>werken aan powerpoint en foto's zoeken voor website</td><td>Eloy</td></tr>
-              <tr><td>26/02/2026</td><td>werken aan website, foto's voor website gemaakt </td><td>Luca</td></tr>
-              <tr><td>26/02/2026</td><td>werken aan code</td><td>Alex</td></tr>
-              <tr><td>26/02/2026</td><td>powerpoint dashboard</td><td>Eloy</td></tr>
-              <tr><td>19/03/2026</td><td>powerpoint dashboard</td><td>Luca</td></tr>
-              <tr><td>19/03/2026</td><td>werken aan code</td><td>Alex</td></tr>
-              <tr><td>19/03/2026</td><td>emotionele steun</td><td>Eloy</td></tr>
-              <tr><td>26/03/2026</td><td>emotionele steun</td><td>Eloy</td></tr>
-              <tr><td>26/03/2026</td><td>bluethooth calibreren en arduino code</td><td>Luca</td></tr>
-              <tr><td>26/03/2026</td><td>design</td><td>Alex</td></tr>
-              <tr><td>26/03/2026</td><td>de 3D tekening afgemaakt,</td><td>Alex</td></tr>
-              <tr><td></td><td>06/04/2026 - 19/04/2026</td><td>PaasVakantie</td></tr>             
-              <tr><td>29/04/2026</td><td>het word document ingevuld </td><td>samen met groep</td></tr>
-              <tr><td>29/04/2026</td><td>bluetooth module basis code gemaakt </td><td>Luca</td></tr>
-              <tr><td>29/04/2026</td><td>csv bestanden proberen opslaan </td><td>Eloy</td></tr>
-              <tr><td>07/05/2026</td><td>Interview voor Limburg stemt af  </td><td>Eloy en Alex </td></tr>
-              <tr><td>07/05/2026</td><td>Werken aan de bluetooth module</td><td>Luca en Alex </td></tr>
-              <tr><td>07/05/2026</td><td>account van Eloy in orde brengen van signagetube  </td><td>Eloy, Alex, Luca, Kurt </td></tr>
 
+            <tbody>
+
+              <tr>
+                <td>16/10/2025</td>
+                <td>Overleg met auto</td>
+                <td><span class="badge team">Iedereen</span></td>
+              </tr>
+
+              <tr>
+                <td>17/10/2025</td>
+                <td>Pitch</td>
+                <td>
+                  <span class="badge luca">Luca</span>
+                  <span class="badge alex">Alex</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>03/11/2025</td>
+                <td>Start stage</td>
+                <td><span class="badge team">ICT</span></td>
+              </tr>
+
+              <tr>
+                <td>20/11/2025</td>
+                <td>Start website & code</td>
+                <td>
+                  <span class="badge luca">Luca</span>
+                  <span class="badge alex">Alex</span>
+                </td>
+              </tr>
+
+              <!-- Vakantie -->
+              <tr class="vakantie">
+                <td colspan="3">17/12/2025 - 04/01/2026 — Kerstvakantie</td>
+              </tr>
+
+              <tr>
+                <td>08/01/2026</td>
+                <td>FlashStorage</td>
+                <td><span class="badge alex">Alex</span></td>
+              </tr>
+
+              <tr>
+                <td>08/01/2026</td>
+                <td>Arduino Nano IoT</td>
+                <td><span class="badge alex">Alex</span></td>
+              </tr>
+
+              <tr>
+                <td>08/01/2026</td>
+                <td>Website‑code</td>
+                <td><span class="badge luca">Luca</span></td>
+              </tr>
+
+              <tr>
+                <td>08/01/2026</td>
+                <td>Solderen</td>
+                <td><span class="badge eloy">Eloy</span></td>
+              </tr>
+
+              <tr>
+                <td>05/02/2026</td>
+                <td>Workshop INSYNCR</td>
+                <td><span class="badge team">Klas & leerkrachten</span></td>
+              </tr>
+
+              <tr>
+                <td>05/02/2026</td>
+                <td>Website</td>
+                <td><span class="badge luca">Luca</span></td>
+              </tr>
+
+              <tr>
+                <td>05/02/2026</td>
+                <td>E‑Chooke code</td>
+                <td><span class="badge alex">Alex</span></td>
+              </tr>
+
+              <tr>
+                <td>05/02/2026</td>
+                <td>Code helpen</td>
+                <td><span class="badge eloy">Eloy</span></td>
+              </tr>
+
+              <tr>
+                <td>12/02/2026</td>
+                <td>Werken aan website</td>
+                <td><span class="badge luca">Luca</span></td>
+              </tr>
+
+              <tr>
+                <td>12/02/2026</td>
+                <td>PowerPoint gemaakt</td>
+                <td><span class="badge eloy">Eloy</span></td>
+              </tr>
+
+              <tr>
+                <td>12/02/2026</td>
+                <td>Werken aan code</td>
+                <td><span class="badge alex">Alex</span></td>
+              </tr>
+
+              <!-- Vakantie -->
+              <tr class="vakantie">
+                <td colspan="3">16/02/2026 - 22/02/2026 — Krokusvakantie</td>
+              </tr>
+
+              <tr>
+                <td>26/02/2026</td>
+                <td>Website & code</td>
+                <td>
+                  <span class="badge luca">Luca</span>
+                  <span class="badge alex">Alex</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>26/02/2026</td>
+                <td>Powerpoint & foto's</td>
+                <td><span class="badge eloy">Eloy</span></td>
+              </tr>
+
+              <tr>
+                <td>19/03/2026</td>
+                <td>Dashboard + code</td>
+                <td>
+                  <span class="badge luca">Luca</span>
+                  <span class="badge alex">Alex</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>19/03/2026</td>
+                <td>Emotionele steun</td>
+                <td><span class="badge eloy">Eloy</span></td>
+              </tr>
+
+              <tr>
+                <td>26/03/2026</td>
+                <td>Bluetooth & Arduino code</td>
+                <td><span class="badge luca">Luca</span></td>
+              </tr>
+
+              <tr>
+                <td>26/03/2026</td>
+                <td>Design & 3D</td>
+                <td><span class="badge alex">Alex</span></td>
+              </tr>
+
+              <!-- Vakantie -->
+              <tr class="vakantie">
+                <td colspan="3">06/04/2026 - 19/04/2026 — Paasvakantie</td>
+              </tr>
+
+              <tr>
+                <td>29/04/2026</td>
+                <td>Document + bluetooth</td>
+                <td>
+                  <span class="badge luca">Luca</span>
+                  <span class="badge eloy">Eloy</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>07/05/2026</td>
+                <td>Interview + bluetooth module</td>
+                <td>
+                  <span class="badge eloy">Eloy</span>
+                  <span class="badge alex">Alex</span>
+                  <span class="badge luca">Luca</span>
+                </td>
+              </tr>
 
             </tbody>
           </table>
-
         </section>
 
         <!-- TAB 2 -->
-        <section class="tab-content hidden" id="tab-greenpower" role="tabpanel" aria-labelledby="tab-greenpower">
+        <section class="tab-content hidden" id="tab-greenpower">
           <h2>Races Green Power</h2>
+
           <table class="logboek-table">
             <thead>
               <tr>
                 <th>Datum</th>
-                <th>plaats</th>
-                <th>win/loss</th>
+                <th>Plaats</th>
+                <th>Win/Loss</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td> ..</td><td> ..</td><td> ..</td></tr>
+              <tr><td>...</td><td>...</td><td>...</td></tr>
             </tbody>
           </table>
+
         </section>
 
       </div>

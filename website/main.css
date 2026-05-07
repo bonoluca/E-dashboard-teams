@@ -877,3 +877,111 @@ main {
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(0,200,255,1);
 }
+
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Logboek</title>
+
+<style>
+/* ===== Modal basis ===== */
+.modal {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Close knop */
+.close {
+  float: right;
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  padding: 8px 14px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.tab.active {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Panel scroll */
+.tabs-panel {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* ===== TABEL ===== */
+.logboek-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.logboek-table thead {
+  background: #1f2937;
+  color: white;
+}
+
+.logboek-table th,
+.logboek-table td {
+  padding: 10px;
+}
+
+.logboek-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logboek-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Vakantie rij */
+.vakantie td {
+  text-align: center;
+  font-weight: bold;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Badge styling */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: white;
+  margin: 2px;
+}
+
+.luca { background: #3b82f6; }
+.alex { background: #10b981; }
+.eloy { background: #f59e0b; }
+.team { background: #6b7280; }
