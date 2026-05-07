@@ -182,6 +182,11 @@
               <tr><td>26/03/2026</td><td>emotionele steun</td><td>Eloy</td></tr>
               <tr><td>26/03/2026</td><td>bluethooth calibreren en arduino code</td><td>Luca</td></tr>
               <tr><td>26/03/2026</td><td>design</td><td>Alex</td></tr>
+              <tr><td>26/03/2026</td><td>de 3D tekening afgemaakt,</td><td>Alex</td></tr>
+              <tr><td>26/03/2026</td><td>het word document ingevuld </td><td>samen met groep</td></tr>
+              <tr><td>26/03/2026</td><td>bluetooth module basis code gemaakt </td><td>Luca</td></tr>
+              <tr><td>26/03/2026</td><td>csv bestanden proberen opslaan </td><td>Eloy</td></tr>
+  
 
 
             </tbody>
@@ -254,18 +259,42 @@
   </div>
 </div>
 
-<!-- ===== Hardware Modal ===== -->
-<div id="HardwareModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="hardwareTitle">
-  <div class="modal-content">
-    <button class="close" id="closeHardware" aria-label="Sluit hardware">&times;</button>
-    <h2 id="hardwareTitle" style="text-align:center;">Onze Hardware</h2>
 
-    <ul class="card-list">
-      <li>Arduino Nano every</li>
-      <li>Sensoren (temp, spanning, stroom)</li>
-      <li>Bekabeling &amp; soldeerwerk</li>
-      <li>Power supply &amp; batterij</li>
-    </ul>
+<!-- ===== Hardware Modal ===== -->
+<div id="HardwareModal" class="modal hardware-modal" aria-hidden="true" role="dialog" aria-labelledby="hardwareTitle">
+  
+  <div class="hardware-inner">
+
+    <!-- Sluitknop -->
+    <button class="modal-close" id="closeHardware" aria-label="Sluit hardware">
+      &times;
+    </button>
+
+    <!-- Titel -->
+    <h2 id="hardwareTitle" class="hardware-title">
+      Onze Hardware
+    </h2>
+
+    <!-- Content (zelfde idee als footer-col) -->
+<div class="hardware-grid">
+
+  <div class="hardware-card">
+    <img src="arduino.jpg" alt="Arduino">
+    <p>Arduino Nano Every</p>
+  </div>
+
+  <div class="hardware-card">
+    <img src="sensor.jpg" alt="Sensor">
+    <p>Temperatuur sensor</p>
+  </div>
+
+  <div class="hardware-card">
+    <img src="power.jpg" alt="Power">
+    <p>Power supply</p>
+  </div>
+
+</div>
+
   </div>
 </div>
 

@@ -754,3 +754,126 @@ main {
   margin: 12px auto;
   display: block;
 }
+
+/* ================================
+   Hardware Modal (nieuwe structuur)
+==================================*/
+.hardware-inner {
+  position: relative;
+  background: rgba(255,255,255,0.85);
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #fff;
+  color: var(--brand);
+  border: 1px solid var(--border);
+
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+.hardware-title {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 24px;
+  color: #00c8ff;
+  text-shadow: 0 0 10px rgba(0,200,255,0.6);
+  margin-bottom: 20px;
+}
+
+.hardware-col {
+  display: flex;
+  justify-content: center;
+}
+
+.hardware-list {
+  background: rgba(255,255,255,0.8);
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  list-style: disc;
+  line-height: 1.6;
+}
+.hardware-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,150,255,0.15);
+}
+
+.hardware-list li:last-child {
+  border-bottom: none;
+}
+.hardware-img {
+  width: 180px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 0 12px rgba(0,150,255,0.5);
+}
+.hardware-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.hardware-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  transition: 0.2s ease;
+}
+
+.hardware-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0,150,255,0.7);
+}
+
+.hardware-card img {
+  width: 100%;
+  max-width: 160px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.hardware-card p {
+  margin: 0;
+  font-weight: 600;
+}
+.hardware-card img {
+  box-shadow: 0 0 12px rgba(0,200,255,0.6);
+  transition: 0.25s ease;
+}
+
+.hardware-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,200,255,1);
+}
