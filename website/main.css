@@ -879,20 +879,7 @@ main {
 }
 
 
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<title>Logboek</title>
 
-<style>
-/* ===== Modal basis ===== */
-.modal {
-  display: block;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
 
 .modal-content {
   background: white;
@@ -985,3 +972,62 @@ main {
 .alex { background: #10b981; }
 .eloy { background: #f59e0b; }
 .team { background: #6b7280; }
+
+/* =========================
+   DARK MODE FIX
+========================= */
+
+body.dark {
+  --bg: #0b0f1a;
+  --text: #e6f1ff;
+  --card: rgba(15,25,45,0.95);
+  --border: #1f2a44;
+}
+
+body.dark .card,
+body.dark .dash-card,
+body.dark .team-card,
+body.dark .hardware-card,
+body.dark .modal-content,
+body.dark .hardware-inner,
+body.dark .tabs-panel,
+body.dark #example-dashboard {
+  background: var(--card) !important;
+  color: var(--text);
+}
+
+body.dark button {
+  background: #1a2a4d;
+  color: #00c8ff;
+}
+
+body.dark button:hover {
+  background: #00aaff;
+  color: white;
+}
+
+body.dark .tab {
+  background: #1a2a4d;
+  color: var(--text);
+}
+
+body.dark .tab:hover {
+  background: #2a3a5f;
+}
+
+body.dark .logboek-table {
+  background: #0f172a;
+}
+
+body.dark .logboek-table tr:nth-child(even) {
+  background: #111827;
+}
+
+body.dark .logboek-table tr:hover {
+  background: #1a2440;
+}
+
+#darkModeBtn {
+  font-size: 18px;
+  font-family: "Orbitron", sans-serif;
+}

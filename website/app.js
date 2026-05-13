@@ -123,3 +123,24 @@ function setProgress(selector, percent, labelText) {
 // setProgress(".circle-grid .progress-circle:nth-child(1)", 75, "75%");
 // setProgress(".circle-grid .progress-circle:nth-child(2)", 60, "60%");
 // setProgress(".circle-grid .progress-circle:nth-child(3)", 85, "85%");
+
+const darkBtn = document.getElementById("darkModeBtn");
+
+darkBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  // opslaan
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    darkBtn.textContent = "☀️";
+  } else {
+    localStorage.setItem("theme", "light");
+    darkBtn.textContent = "🌙";
+  }
+});
+
+// onthouden bij reload
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  darkBtn.textContent = "☀️";
+}
