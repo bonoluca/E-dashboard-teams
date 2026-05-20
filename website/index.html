@@ -25,7 +25,7 @@
       <div class="actions">
           <button id="infoBtn">logboek</button>
           <button id="flyerBtn">Toon Flyer</button>
-          <button id="darkModeBtn">Dark Mode/Light Mode</button>
+          <button id="darkModeBtn">🌙/☀️</button>
       </div>
   </div>
 </header>
@@ -343,12 +343,15 @@
             <thead>
               <tr>
                 <th>Datum</th>
+                <th>Ronde</th>
                 <th>Plaats</th>
                 <th>Win/Loss</th>
+                <th>locatie</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>...</td><td>...</td><td>...</td></tr>
+              <tr><td>17/05/2026</td><td>1</td><td>auto 1 plaats 1 , auto 2 plaats 7</td><td>Win</td><td>Nederland Lelystad</td></tr>
+              <tr><td>17/05/2026</td><td>2</td><td>auto 1 plaats 1 , auto 2 plaats 3</td><td>Win</td><td>Nederland Lelystad</td></tr>
             </tbody>
           </table>
 
@@ -418,39 +421,44 @@
       Onze Hardware
     </h2>
 
-    <!-- Content (zelfde idee als footer-col) -->
-<div class="hardware-grid">
+    <div class="hardware-content">
 
-  <div class="hardware-card">
-    <img src="ArduinoNano.jpg" alt="Arduino">
-    <p>Arduino Nano Every</p>
+  <!-- LINKS -->
+  <div class="hardware-list">
+    
+    <div class="hardware-item" onclick="showHardware('arduino')">
+      <h3>Arduino Nano Every</h3>
+      <img src="ArduinoNano.jpg" alt="Arduino">
+    </div>
+
+    <div class="hardware-item" onclick="showHardware('temp')">
+      <h3>Temperatuur sensor</h3>
+      <img src="ArduinoNano.jpg" alt="Arduino">
+
+    </div>
+
+    <div class="hardware-item" onclick="showHardware('amp')">
+      <h3>Ampère meter</h3>
+      <img src="ArduinoNano.jpg" alt="Arduino">
+    </div>
+
+    <div class="hardware-item" onclick="showHardware('bluetooth')">
+      <h3>Bluetooth HC-05</h3>
+      <img src="ArduinoNano.jpg" alt="Arduino">
+    </div>
+
   </div>
 
-  <div class="hardware-card">
-    <img src="Temp.jpg" alt="Sensor">
-    <p>Temperatuur sensor</p>
-  </div>
-
-  <div class="hardware-card">
-    <img src="ampère-Meter.jpg" alt="ampère-Meter">
-    <p>ampère-Meter</p>
-  </div>
-  <div class="hardware-card">
-    <img src="Bluetooth-1.jpg" alt="Bluetooth module">
-    <p>Bluetooth module HC-05</p>
-  </div>
-  <div class="hardware-card">
-    <img src="ToerentalMeter.jpg" alt="ToerentalMeter">
-    <p>ToerentalMeter</p>
-  </div>
-  <div class="hardware-card">
-    <img src="Printplaat.jpg" alt="Printplaatje">
-    <p>Printplaatje</p>
+  <!-- RECHTS -->
+  <div class="hardware-details" id="hardwareDetails">
+    <h2>Klik op een item</h2>
+    <p>Kies links een hardware onderdeel.</p>
   </div>
 </div>
+</div> <!-- hardware-content -->
+</div> <!-- hardware-inner -->
+</div> <!-- HardwareModal -->
 
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="footer-inner">

@@ -144,3 +144,35 @@ if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   darkBtn.textContent = "☀️";
 }
+
+function showHardware(type) {
+  const details = document.getElementById("hardwareDetails");
+
+  if (type === "arduino") {
+    details.innerHTML = `
+      <h2>Arduino Nano Every</h2>
+      <p>De centrale microcontroller van het systeem. Verwerkt alle data van sensoren.</p>
+    `;
+  }
+
+  if (type === "temp") {
+    details.innerHTML = `
+      <h2>Temperatuur sensor</h2>
+      <p>Meet de temperatuur van de wagen en stuurt dit naar de Arduino.</p>
+    `;
+  }
+
+  if (type === "amp") {
+    details.innerHTML = `
+      <h2>Ampère meter</h2>
+      <p>Meet het stroomverbruik van de batterij.</p>
+    `;
+  }
+
+  if (type === "bluetooth") {
+    details.innerHTML = `
+      <h2>Bluetooth HC‑05</h2>
+      <p>Stuurt data draadloos naar de computer of app.</p>
+    `;
+  }
+}
