@@ -1141,3 +1141,37 @@ body.dark .logboek-table tr:hover {
   box-shadow: 0 0 12px rgba(0,150,255,0.8);
 }
 
+/* ===== LOGBOEK / NAV BUTTON ===== */
+.team-btn {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #ffffff;
+  color: #0044aa;
+  border: 2px solid #00aaff;
+  border-radius: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 0 12px rgba(0,150,255,0.5);
+  text-decoration: none;
+}
+
+/* hover */
+.team-btn:hover {
+  background: #00aaff;
+  color: #ffffff;
+}
+
+/* ✅ DARK MODE */
+body.dark .team-btn {
+  background: #111827;
+  color: #00cfff;
+  border-color: #00cfff;
+}
+
+body.dark .team-btn:hover {
+  background: #00cfff;
+  color: #000;
+}
