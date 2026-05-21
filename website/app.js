@@ -51,7 +51,7 @@ close.addEventListener("click", () => {
 /* ================================
    Modals activeren
 ==================================*/
-setupModal("infoBtn", "infoModal", "closeInfo");
+
 setupModal("flyerBtn", "flyerModal", "closeFlyer");
 setupModal("pplinfo", "pplModal", "closePpl");
 setupModal("hardwareBtn", "HardwareModal", "closeHardware");
@@ -59,36 +59,7 @@ setupModal("hardwareBtn", "HardwareModal", "closeHardware");
 /* ================================
    Tabs in Info-Modal
 ==================================*/
-function initInfoTabs() {
-  const infoModal = document.getElementById("infoModal");
-  if (!infoModal) return;
 
-  const tabButtons = infoModal.querySelectorAll(".tab");
-  const tabContents = infoModal.querySelectorAll(".tab-content");
-
-  if (!tabButtons.length || !tabContents.length) {
-    console.warn("Tabs niet gevonden in InfoModal!");
-    return;
-  }
-
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // Active knop wisselen
-      const current = infoModal.querySelector(".tab.active");
-      if (current) current.classList.remove("active");
-      btn.classList.add("active");
-
-      // aria-selected (voor screenreaders)
-      tabButtons.forEach((b) => b.setAttribute("aria-selected", b === btn ? "true" : "false"));
-
-      // Content wisselen
-      tabContents.forEach((content) => content.classList.add("hidden"));
-      const target = infoModal.querySelector("#" + btn.dataset.tab);
-      if (target) target.classList.remove("hidden");
-    });
-  });
-}
-initInfoTabs();
 
 /* ================================
    Temperatuur-alarm (sterk warning effect)
