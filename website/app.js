@@ -12,16 +12,21 @@ function setupModal(buttonId, modalId, closeId) {
   }
 
   // Open modal
-  btn.addEventListener("click", () => {
-    modal.style.display = "flex";
-    modal.setAttribute("aria-hidden", "false");
-  });
+btn.addEventListener("click", () => {
+  modal.style.display = "flex";
+  modal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden"; // ✅ LOCK SCROLL
+});
+
 
   // Sluit via X
-  close.addEventListener("click", () => {
-    modal.style.display = "none";
-    modal.setAttribute("aria-hidden", "true");
-  });
+close.addEventListener("click", () => {
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = ""; // ✅ UNLOCK
+});
 
   // Klik buiten de content sluit ook
   modal.addEventListener("click", (e) => {
@@ -29,7 +34,8 @@ function setupModal(buttonId, modalId, closeId) {
     if (e.target === modal) {
       modal.style.display = "none";
       modal.setAttribute("aria-hidden", "true");
-    }
+      document.body.style.overflow = ""; // ✅ UNLOCK
+}
   });
 
   // ESC sluit modal
@@ -37,7 +43,8 @@ function setupModal(buttonId, modalId, closeId) {
     if (e.key === "Escape" && modal.style.display === "flex") {
       modal.style.display = "none";
       modal.setAttribute("aria-hidden", "true");
-    }
+      document.body.style.overflow = ""; // ✅ UNLOCK
+}
   });
 }
 

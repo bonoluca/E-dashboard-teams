@@ -22,11 +22,9 @@ body {
   color: var(--text);
   background: var(--bg);
 
-  /* layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  min-height: 100vh;   /* ✅ belangrijk */
+  display: block;      /* ✅ vervangt flex */
+  
   /* blur overlay support */
   position: relative;
 }
@@ -114,10 +112,12 @@ button:hover {
    Main Layout
 ==================================*/
 main {
-  width: 100%;
-  max-width: 1200px;
-  padding: 30px;
+width: 100%;
+max-width: 1200px;
+padding: 30px;
+margin: 0 auto;  /* ✅ dit vervangt align-items center */
 }
+
 
 /* ================================
    Overzichtskaarten (cards)
