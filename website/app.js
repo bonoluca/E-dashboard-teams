@@ -1,77 +1,68 @@
 /* ================================
-   Modals openen/sluiten (DRY)
+   MODALS (VEILIG)
 ==================================*/
 function setupModal(buttonId, modalId, closeId) {
   const btn = document.getElementById(buttonId);
   const modal = document.getElementById(modalId);
   const close = document.getElementById(closeId);
 
-  if (!btn || !modal || !close) {
-    console.warn("Modal-element niet gevonden:", buttonId, modalId, closeId);
-    return;
-  }
+  // ✅ safety check (belangrijk voor meerdere pagina’s)
+  if (!btn || !modal || !close) return;
 
   // Open modal
-btn.addEventListener("click", () => {
-  modal.style.display = "flex";
-  modal.setAttribute("aria-hidden", "false");
-
-  document.body.style.overflow = "hidden"; // ✅ LOCK SCROLL
-});
-
+  btn.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
 
   // Sluit via X
-close.addEventListener("click", () => {
-  modal.style.display = "none";
-  modal.setAttribute("aria-hidden", "true");
-
-  document.body.style.overflow = ""; // ✅ UNLOCK
-});
-
-  // Klik buiten de content sluit ook
-  modal.addEventListener("click", (e) => {
-    // klik op backdrop (dus niet in .modal-content)
-    if (e.target === modal) {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = ""; // ✅ UNLOCK
-}
+  close.addEventListener("click", () => {
+    closeModal();
   });
 
-  // ESC sluit modal
+  // Klik buiten = sluiten
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // ESC sluiten
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.style.display === "flex") {
-      modal.style.display = "none";
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = ""; // ✅ UNLOCK
-}
+      closeModal();
+    }
   });
+
+  function closeModal() {
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
 }
 
 /* ================================
-   Modals activeren
+   MODALS ACTIVEREN
 ==================================*/
-
 setupModal("flyerBtn", "flyerModal", "closeFlyer");
 setupModal("pplinfo", "pplModal", "closePpl");
 setupModal("hardwareBtn", "HardwareModal", "closeHardware");
 
 /* ================================
-   Tabs in Info-Modal
-==================================*/
-
-
-/* ================================
-   Temperatuur-alarm (sterk warning effect)
+   TEMPERATUUR WARNING
 ==================================*/
 (function () {
   const tempCard = document.getElementById("tempCard");
   const tempVal = document.getElementById("tempVal");
+
   if (!tempCard || !tempVal) return;
 
-  // Leest bv. "70°C" als 70
-  const parsed = parseFloat((tempVal.textContent || "0").replace(/[^\d.]/g, ""));
-  const THRESHOLD = 65; // drempel: pas aan naar wens
+  const parsed = parseFloat(
+    (tempVal.textContent || "0").replace(/[^\d.]/g, "")
+  );
+
+  const THRESHOLD = 65;
 
   if (!isNaN(parsed) && parsed > THRESHOLD) {
     tempCard.classList.add("temp-alert");
@@ -81,8 +72,7 @@ setupModal("hardwareBtn", "HardwareModal", "closeHardware");
 })();
 
 /* ================================
-   (Optioneel) Dynamische progress-circles
-   Gebruik setProgress(selector, percent, labelText)
+   PROGRESS CIRCLES
 ==================================*/
 function setProgress(selector, percent, labelText) {
   const el = document.querySelector(selector);
@@ -92,39 +82,48 @@ function setProgress(selector, percent, labelText) {
   el.style.setProperty("--percent", p);
 
   if (labelText) {
-    // Toon label onder/over de cirkel via data-attribute
     el.setAttribute("data-label", labelText);
   }
 }
 
-// Voorbeelden (je kunt deze aanpassen of verwijderen):
-// setProgress(".circle-grid .progress-circle:nth-child(1)", 75, "75%");
-// setProgress(".circle-grid .progress-circle:nth-child(2)", 60, "60%");
-// setProgress(".circle-grid .progress-circle:nth-child(3)", 85, "85%");
-
+/* ================================
+   DARK MODE (WERKT OP ALLE PAGINA’S)
+==================================*/
 const darkBtn = document.getElementById("darkModeBtn");
 
-darkBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
+if (darkBtn) {
+  darkBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 
-  // opslaan
-  if (document.body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    darkBtn.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    darkBtn.textContent = "🌙";
-  }
-});
-
-// onthouden bij reload
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  darkBtn.textContent = "☀️";
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      darkBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      darkBtn.textContent = "🌙";
+    }
+  });
 }
 
+// ✅ automatisch thema laden (werkt overal)
+(function () {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+
+    if (darkBtn) {
+      darkBtn.textContent = "☀️";
+    }
+  }
+})();
+
+/* ================================
+   HARDWARE INFO
+==================================*/
 function showHardware(type) {
   const details = document.getElementById("hardwareDetails");
+  if (!details) return;
 
   if (type === "arduino") {
     details.innerHTML = `
