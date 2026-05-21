@@ -153,3 +153,20 @@ function showHardware(type) {
     `;
   }
 }
+
+const flyer = document.querySelector(".flyer-img");
+
+if (flyer) {
+  flyer.addEventListener("click", () => {
+    flyer.classList.toggle("zoomed");
+  });
+}
+
+/* ===== FLYER ZOOM (werkt alleen op flyer pagina) ===== */
+const flyerFull = document.querySelector(".flyer-full");
+
+if (flyerFull) {
+  flyerFull.addEventListener("click", () => {
+    flyerFull.classList.toggle("zoomed");
+  });
+}

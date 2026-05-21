@@ -1175,3 +1175,182 @@ body.dark .team-btn:hover {
   background: #00cfff;
   color: #000;
 }
+
+.flyer-img {
+  cursor: zoom-in;
+  transition: transform 0.4s ease;
+}
+
+.flyer-img.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
+.flyer-img {
+  box-shadow: 
+    0 0 10px rgba(0,150,255,0.6),
+    0 0 20px rgba(0,150,255,0.5),
+    0 0 40px rgba(0,150,255,0.3);
+}
+
+.flyer-img:hover {
+  box-shadow: 
+    0 0 20px rgba(0,200,255,0.9),
+    0 0 40px rgba(0,200,255,0.7),
+    0 0 60px rgba(0,200,255,0.5);
+}
+
+@keyframes floatFlyer {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.flyer-img {
+  animation: floatFlyer 4s ease-in-out infinite;
+}
+
+.flyer-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  border: 1px solid rgba(0,150,255,0.4);
+}
+
+.flyer-card h2 {
+  color: #00cfff;
+  text-shadow: 0 0 10px rgba(0,200,255,0.8);
+}
+
+.flyer-card {
+  position: relative;
+}
+
+.flyer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.flyer-card:hover .flyer-overlay {
+  opacity: 1;
+}
+
+/* ===== FLYER CLOSE BUTTON ===== */
+#flyerModal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  font-size: 26px;
+  font-weight: bold;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #0044aa;
+
+  border-radius: 50%;
+  border: 2px solid #00aaff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 15px rgba(0,150,255,0.7);
+  transition: 0.25s;
+}
+
+/* hover effect */
+#flyerModal .close:hover {
+  background: #00aaff;
+  color: white;
+  transform: scale(1.2);
+}
+
+/* ✅ DARK MODE */
+body.dark #flyerModal .close {
+  background: #111827;
+  color: #00cfff;
+  border-color: #00cfff;
+}
+
+body.dark #flyerModal .close:hover {
+  background: #00cfff;
+  color: black;
+}
+
+#flyerModal .close {
+  z-index: 999;   /* 👈 HOGE waarde */
+  position: absolute;
+}
+
+.flyer-img {
+  position: relative;
+  z-index: 1;
+}
+
+#flyerModal .close {
+  position: absolute;
+  z-index: 1000;
+}
+
+/* ===== FLYER PAGE ===== */
+.flyer-page {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* flyer afbeelding */
+.flyer-full {
+  max-width: 90%;
+  max-width: 700px;
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+  cursor: zoom-in;
+
+  box-shadow:
+    0 0 20px rgba(0,150,255,0.6),
+    0 0 40px rgba(0,150,255,0.4);
+}
+
+/* hover effect */
+.flyer-full:hover {
+  transform: scale(1.03);
+}
+
+/* zoom bij klik */
+.flyer-full.zoomed {
+  transform: scale(1.4);
+  cursor: zoom-out;
+}
+
+/* DARK MODE */
+body.dark .flyer-full {
+  box-shadow:
+    0 0 30px rgba(0,200,255,0.9),
+    0 0 60px rgba(0,200,255,0.6);
+}
+
+#darkModeBtn {
+  font-size: 18px;
+  padding: 10px 16px;
+}
+body.dark .team-btn {
+  background: #111827;
+  color: #00cfff;
+  border-color: #00cfff;
+}
+
