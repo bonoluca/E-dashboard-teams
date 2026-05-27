@@ -1354,3 +1354,6 @@ body.dark .team-btn {
   border-color: #00cfff;
 }
 
+body {
+  transition: background 0.4s ease, color 0.4s ease;
+}
