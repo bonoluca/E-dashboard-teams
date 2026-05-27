@@ -152,6 +152,15 @@ function showHardware(type) {
       <p>Stuurt data draadloos naar de computer of app.</p>
     `;
   }
+
+
+  if (type === "tr/min") {
+    details.innerHTML = `
+      <h2>Toerental meter</h2>
+      <p>Meet het aantal rotaties per minuut (RPM) via een magneetsensor.</p>
+    `;
+  } 
+
 }
 
 const flyer = document.querySelector(".flyer-img");
